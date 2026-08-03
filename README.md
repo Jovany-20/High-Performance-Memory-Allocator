@@ -28,7 +28,7 @@ The `realloc` implementation is highly optimized to avoid expensive `memcpy` ope
 
 Compile the allocator and test driver:
 ```bash
-cd mymalloc
+cd ./mymalloc
 make
 ```
 
