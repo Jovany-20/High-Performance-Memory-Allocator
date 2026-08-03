@@ -17,7 +17,7 @@ Instead of a single global free list, the allocator uses an array of **10 Segreg
 
 ### 2. Boundary-Tag Coalescing
 To eliminate external fragmentation, every block contains an 8-byte header and footer. 
-When `free()` is called, the allocator checks the boundary tags of the adjacent physical memory blocks in $O(1)$ time. If the adjacent blocks are also free, it safely unlinks them from their respective bins, merges them into a massive contiguous block, and inserts the new block into the correct larger bin.
+When `free()` is called, the allocator checks the boundary tags of the adjacent physical memory blocks in O(1) time. If the adjacent blocks are also free, it safely unlinks them from their respective bins, merges them into a massive contiguous block, and inserts the new block into the correct larger bin.
 
 ### 3. Smart `realloc` with In-Place Heap Expansion
 The `realloc` implementation is highly optimized to avoid expensive `memcpy` operations whenever possible:
@@ -28,6 +28,7 @@ The `realloc` implementation is highly optimized to avoid expensive `memcpy` ope
 
 Compile the allocator and test driver:
 ```bash
+cd mymalloc
 make
 ```
 
